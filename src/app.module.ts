@@ -17,6 +17,7 @@ import { UsersModule } from './users/users.module';
     database : 'nestjs_mysql_tutorial',
     entities : [User, Profile, Post],
     synchronize : false,
+    migrationsRun : true,
   }), UsersModule],
   controllers: [AppController],
   providers: [AppService],
