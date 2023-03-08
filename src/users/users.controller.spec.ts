@@ -5,7 +5,13 @@ import { UsersService } from './users.service';
 describe('UsersController', () => {
   let controller: UsersController;
 
-  const mockUsersService = {};
+  const mockUsersService = {
+    findUser: jest.fn(),
+    createUser: jest.fn(),
+    updateUser: jest.fn(),
+    updateUserById: jest.fn(),
+    deleteUser: jest.fn(),
+  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -19,4 +25,8 @@ describe('UsersController', () => {
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
+
+  it("should create a user", () => {
+    expect(controller.createUser()).toBeDefined();
+  })
 });

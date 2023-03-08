@@ -6,6 +6,7 @@ import { Post } from './typeORM/entities/Post';
 import { Profile } from './typeORM/entities/Profile';
 import { User } from './typeORM/entities/User';
 import { UsersModule } from './users/users.module';
+import { CartModule } from './cart/cart.module';
 
 @Module({
   imports: [TypeOrmModule.forRoot({
@@ -18,7 +19,7 @@ import { UsersModule } from './users/users.module';
     entities : [User, Profile, Post],
     synchronize : false,
     migrationsRun : true,
-  }), UsersModule],
+  }), UsersModule, CartModule],
   controllers: [AppController],
   providers: [AppService],
 })
